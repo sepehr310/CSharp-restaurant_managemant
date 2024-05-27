@@ -1,3 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using restaurant_managemant;
+using Spectre.Console;
 
-Console.WriteLine("Hello, World!");
+
+Console.Write("Init system... ");
+using (var progress = new ProgressBar()) {
+    for (int i = 0; i <= 100; i++) {
+        progress.Report((double) i / 100);
+        Thread.Sleep(20);
+    }
+}
+Console.WriteLine("Done.");
+Thread.Sleep(50);
+
+MainMenu.MenuDisplay();
+

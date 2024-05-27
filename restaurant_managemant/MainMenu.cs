@@ -1,5 +1,5 @@
 using Spectre.Console;
-
+using Branches;
 namespace restaurant_managemant;
 
 
@@ -25,10 +25,16 @@ public class MainMenu
             new SelectionPrompt<string>()
                 .Title("Menu Options")
                 .PageSize(10)
+                .Mode(SelectionMode.Leaf)
                 .AddChoices(new[] {
                     "Manage Branches", "manage Orders",
                 }));
         
-        AnsiConsole.WriteLine($"Open {Options} Menu!");
+        //TODO: add switch case
+
+        if (Options=="Manage Branches")
+        {
+            BranchMenu.MenuDisplay();
+        }
     }
 }

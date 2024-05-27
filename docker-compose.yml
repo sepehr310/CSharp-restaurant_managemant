@@ -1,0 +1,6 @@
+﻿services:
+  restaurant_managemant:
+    image: restaurant_managemant
+    build:
+      context: .
+      dockerfile: restaurant_managemant/Dockerfile

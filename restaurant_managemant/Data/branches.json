@@ -2,6 +2,21 @@
   {
     "id": 1,
     "branchName": "Main",
-    "capasity": 200
+    "capasity": 201
+  },
+  {
+    "id": 2,
+    "branchName": "Niyayesh",
+    "capasity": 100
+  },
+  {
+    "id": 3,
+    "branchName": "Mirdamad",
+    "capasity": 250
+  },
+  {
+    "id": 4,
+    "branchName": "Forsat shirazi",
+    "capasity": 300
   }
 ]

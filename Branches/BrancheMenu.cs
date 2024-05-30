@@ -8,7 +8,7 @@ public class BranchMenu
      enum MenuDisplayEnum
     {
         AddBranch,
-        ListBranches,
+        UpdateBranch,
         Back,
     }
      
@@ -18,35 +18,62 @@ public class BranchMenu
 
         while (manuLoop)
         {
+
+            Console.Clear();
+            AnsiConsole.Clear();
+            var branch = new BranchesService();
+
+            List<BranchesSchema> list = branch.findAll();
+            var dataTable = new Table().Centered();
+
+            dataTable.Title = new TableTitle("List Branches");
+            dataTable.AddColumn("id");
+            dataTable.AddColumn("Name");
+            dataTable.AddColumn("Capacity");
+
+            foreach (var variable in list)
+            {
+                dataTable.AddRow($"{variable.id}",$"{variable.branchName}",$"{variable.capacity}");
+                AnsiConsole.Write(dataTable);
+            }
             var Options = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                     .Title("Menu Options")
                     .PageSize(10)
                     .Mode(SelectionMode.Leaf)
                     .AddChoices(new[] {
-                        MenuDisplayEnum.AddBranch.ToString(),MenuDisplayEnum.ListBranches.ToString(),MenuDisplayEnum.Back.ToString()
+                        MenuDisplayEnum.AddBranch.ToString(),MenuDisplayEnum.UpdateBranch.ToString(),MenuDisplayEnum.Back.ToString()
                     }));
 
-            var branch = new BranchesService();
 
-            if (Options== MenuDisplayEnum.AddBranch.ToString())
+            if (Options == MenuDisplayEnum.AddBranch.ToString())
             {
                 Console.WriteLine("Enter BranchName: ");
                 string branchName = Console.ReadLine();
-            
+
                 Console.WriteLine("Enter capacity: ");
                 int capacity = Convert.ToInt32(Console.ReadLine());
-            
+
                 branch.create_Branch(new BranchesSchema()
                 {
                     branchName = branchName,
-                    capasity = capacity
+                    capacity = capacity
                 });
-            }
-            else if (Options == MenuDisplayEnum.ListBranches.ToString())
+            }else if (Options == MenuDisplayEnum.UpdateBranch.ToString())
             {
-                branch.findAll();
-            }else if (Options== MenuDisplayEnum.Back.ToString())
+                Console.Write("Enter ID: ");
+                BranchesSchema find = branch.findByid(Convert.ToInt32(Console.ReadLine()));
+                Console.Clear();
+                Console.WriteLine($"update Name? ({find.branchName})");
+                find.branchName = Console.ReadLine() ;
+                
+                Console.WriteLine($"update Capacity? ({find.capacity})");
+                find.capacity = Convert.ToInt32(Console.ReadLine());
+                
+                branch.updateById(find);
+
+            }
+            else if (Options== MenuDisplayEnum.Back.ToString())
             {
                 manuLoop = false;
             }

@@ -36,8 +36,7 @@ public class DataManagementService
         try
         {
             string filePath = $"../../../Data/{filename}";
-            string directoryPath = Path.GetDirectoryName(filePath);
-           var stringData=  File.ReadAllText(directoryPath,Encoding.UTF8);
+           var stringData=  File.ReadAllText(filePath,Encoding.UTF8);
            T data = JsonConvert.DeserializeObject<T>(stringData);
            return data;        }
         catch (Exception e)

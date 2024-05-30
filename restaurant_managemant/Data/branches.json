@@ -1,6 +1,7 @@
 ﻿[
   {
-    "branchName": "sepehr",
-    "capasity": 123
+    "id": 1,
+    "branchName": "Main",
+    "capasity": 200
   }
 ]

@@ -1,5 +1,6 @@
 ﻿using restaurant_managemant;
-using Spectre.Console;
+using Orders;
+
 
 
 // Console.Write("Init system... ");
@@ -9,6 +10,10 @@ using Spectre.Console;
 //         Thread.Sleep(20);
 //     }
 // }
+
+var timer = new OrderSchedule();
+timer.Start();
+
 Console.WriteLine("Done.");
 Thread.Sleep(50);
 

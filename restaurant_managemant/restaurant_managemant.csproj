@@ -22,6 +22,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Branches\Branches.csproj" />
+      <ProjectReference Include="..\Orders\Orders.csproj" />
     </ItemGroup>
 
     <ItemGroup>

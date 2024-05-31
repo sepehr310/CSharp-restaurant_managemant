@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Branches", "Branches\Branch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManagement\DataManagement.csproj", "{899785B9-FFE2-4168-ACE4-F5E44A15AB22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders", "Orders\Orders.csproj", "{6BDAC876-DF4D-416E-A620-69FC0DBE1882}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,5 +31,9 @@ Global
 		{899785B9-FFE2-4168-ACE4-F5E44A15AB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{899785B9-FFE2-4168-ACE4-F5E44A15AB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{899785B9-FFE2-4168-ACE4-F5E44A15AB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDAC876-DF4D-416E-A620-69FC0DBE1882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDAC876-DF4D-416E-A620-69FC0DBE1882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDAC876-DF4D-416E-A620-69FC0DBE1882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDAC876-DF4D-416E-A620-69FC0DBE1882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -18,13 +18,13 @@ public class BranchesService
 
     }
     
-    public List<BranchesSchema> findAll()
+    public List<BranchesSchema> FindAll()
     {
         List<BranchesSchema> branches = DataManagementService.get_data<List<BranchesSchema>>("branches.json");
         return branches;
     }
 
-    public void updateById(BranchesSchema branch)
+    public void UpdateById(BranchesSchema branch)
     {
         List<BranchesSchema> branches = DataManagementService.get_data<List<BranchesSchema>>("branches.json");
         BranchesSchema findBranch = branches.Find(branch => branch.id == branch.id);
@@ -44,7 +44,7 @@ public class BranchesService
         
     }
 
-    public BranchesSchema findByid(int id)
+    public BranchesSchema FindById(int id)
     {
         List<BranchesSchema> branches = DataManagementService.get_data<List<BranchesSchema>>("branches.json");
         return branches.Find(branch => branch.id ==id);

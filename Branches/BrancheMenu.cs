@@ -23,7 +23,7 @@ public class BranchMenu
             AnsiConsole.Clear();
             var branch = new BranchesService();
 
-            List<BranchesSchema> list = branch.findAll();
+            List<BranchesSchema> list = branch.FindAll();
             var dataTable = new Table().Centered();
 
             dataTable.Title = new TableTitle("List Branches");
@@ -62,7 +62,7 @@ public class BranchMenu
             }else if (Options == MenuDisplayEnum.UpdateBranch.ToString())
             {
                 Console.Write("Enter ID: ");
-                BranchesSchema find = branch.findByid(Convert.ToInt32(Console.ReadLine()));
+                BranchesSchema find = branch.FindById(Convert.ToInt32(Console.ReadLine()));
                 Console.Clear();
                 Console.WriteLine($"update Name? ({find.branchName})");
                 find.branchName = Console.ReadLine() ;
@@ -70,7 +70,7 @@ public class BranchMenu
                 Console.WriteLine($"update Capacity? ({find.capacity})");
                 find.capacity = Convert.ToInt32(Console.ReadLine());
                 
-                branch.updateById(find);
+                branch.UpdateById(find);
 
             }
             else if (Options== MenuDisplayEnum.Back.ToString())

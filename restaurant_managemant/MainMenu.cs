@@ -1,5 +1,7 @@
 using Spectre.Console;
 using Branches;
+using Orders;
+
 namespace restaurant_managemant;
 
 
@@ -39,6 +41,9 @@ public class MainMenu
             if (Options=="Manage Branches")
             {
                 BranchMenu.MenuDisplay();
+            }else if (Options == "manage Orders")
+            {
+                OrdersMenu.MenuDisplay();
             }
             else if (Options == "Exit")
             {

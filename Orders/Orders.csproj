@@ -7,14 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-      <PackageReference Include="Spectre.Console" Version="0.49.2-preview.0.5" />
-      <PackageReference Include="Spectre.Console.Cli" Version="0.49.2-preview.0.5" />
+      <PackageReference Include="Spectre.Console" Version="0.49.1" />
+      <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DataManagement\DataManagement.csproj" />
-      <ProjectReference Include="..\Orders\Orders.csproj" />
     </ItemGroup>
 
 </Project>

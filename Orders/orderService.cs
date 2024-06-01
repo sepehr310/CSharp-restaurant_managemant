@@ -32,7 +32,7 @@ public class OrderService
     public void UpdateById(OrderSchema order)
     {
         List<OrderSchema> orders = DataManagementService.get_data<List<OrderSchema>>("orders.json");
-        OrderSchema findOrders = orders.Find(branch => branch.id == branch.id);
+        OrderSchema findOrders = orders.Find(item => item.id == item.id);
 
         if (findOrders != null)
         {
@@ -51,11 +51,11 @@ public class OrderService
     public void DeleteOrder(int id)
     {
         List<OrderSchema> orders = DataManagementService.get_data<List<OrderSchema>>("orders.json");
-        OrderSchema findOrders = orders.Find(branch => branch.id == id);
+        OrderSchema findOrders = orders.Find(item => item.id == id);
 
         if (findOrders != null)
         {
-
+            
             orders.Remove(findOrders);
             DataManagementService.save_data(orders,"orders.json");
         }

@@ -1,14 +1,14 @@
 ﻿[
   {
     "id": 1,
-    "branchName": "shirodi",
+    "branchName": "Razi1",
     "capacity": 2,
     "activeOrders": 0,
     "orders": null
   },
   {
     "id": 2,
-    "branchName": "Niyayesh",
+    "branchName": "qqqq",
     "capacity": 2,
     "activeOrders": 0,
     "orders": null
@@ -18,11 +18,18 @@
     "branchName": "Mirdamad",
     "capacity": 2,
     "activeOrders": 0,
-    "orders"  : null
+    "orders": null
   },
   {
     "id": 4,
     "branchName": "Forsat shirazi",
+    "capacity": 2,
+    "activeOrders": 0,
+    "orders": null
+  },
+  {
+    "id": 5,
+    "branchName": "Modares",
     "capacity": 2,
     "activeOrders": 0,
     "orders": null

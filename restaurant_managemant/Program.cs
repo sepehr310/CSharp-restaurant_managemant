@@ -11,7 +11,7 @@
 // }
 
 var timer = new OrderSchedule();
-//timer.Start();
+timer.Start();
 
 Console.WriteLine("Done.");
 Thread.Sleep(50);

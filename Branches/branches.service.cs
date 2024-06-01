@@ -11,7 +11,8 @@ public class BranchesService
      List<BranchesSchema> branches = DataManagementService.get_data<List<BranchesSchema>>("branches.json");
 
      branch.id = branches.OrderBy(list=>list.id).ToList().Last().id +1;
-      
+
+     branch.activeOrders = 0;
      branches.Add(branch);
 
      DataManagementService.save_data(branches,"branches.json");
@@ -33,9 +34,8 @@ public class BranchesService
         {
             findBranch.branchName = branch.branchName;
             findBranch.capacity = branch.capacity;
+            findBranch.activeOrders = branch.activeOrders;
             DataManagementService.save_data(branches,"branches.json");
-            
-            Console.WriteLine("Updated Successfully");
         }
         else
         {

@@ -22,4 +22,29 @@ public class OrderService
     {
         return DataManagement.DataManagementService.get_data<List<OrderSchema>>("orders.json");
     }
+
+    public List<OrderSchema> FindByStatus(orderStausEnum status)
+    {
+        return DataManagement.DataManagementService.get_data<List<OrderSchema>>("orders.json")
+            .FindAll(order => order.status == status);
+    }
+    
+    public void UpdateById(OrderSchema order)
+    {
+        List<OrderSchema> orders = DataManagementService.get_data<List<OrderSchema>>("orders.json");
+        OrderSchema findOrders = orders.Find(branch => branch.id == branch.id);
+
+        if (findOrders != null)
+        {
+            findOrders.status = order.status;
+            findOrders.branchId = order.branchId;
+            
+            DataManagementService.save_data(orders,"orders.json");
+        }
+        else
+        {
+            Console.WriteLine("NotFound");
+        }
+        
+    }
 }

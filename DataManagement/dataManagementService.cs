@@ -19,9 +19,9 @@ public class DataManagementService
                 Directory.CreateDirectory(directoryPath);
             }
             
-            Console.WriteLine(directoryPath);
             
             File.WriteAllText(filePath, json,Encoding.UTF8);
+            Thread.Sleep(50);
             return true;
         }
         catch (Exception e)

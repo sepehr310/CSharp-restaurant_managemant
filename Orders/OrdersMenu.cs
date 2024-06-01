@@ -41,7 +41,7 @@ public class OrdersMenu
                     .PageSize(10)
                     .Mode(SelectionMode.Leaf)
                     .AddChoices(new[] {
-                        MenuDisplayEnum.AddOrder.ToString(),MenuDisplayEnum.DeleteOrder.ToString(),MenuDisplayEnum.Back.ToString()
+                        MenuDisplayEnum.AddOrder.ToString(),MenuDisplayEnum.Back.ToString()
                     }));
 
 

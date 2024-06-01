@@ -4,105 +4,13 @@
     "branchName": "Razi1",
     "capacity": 2,
     "activeOrders": 0,
-    "orders": [
-      {
-        "id": 1,
-        "items": [
-          {
-            "name": "kabab",
-            "price": 200.0,
-            "time": 20
-          }
-        ],
-        "branchId": null,
-        "totalPrice": 200.0,
-        "status": 2,
-        "time": 20,
-        "finishTime": "2024-06-01T22:09:29.5315965+03:30"
-      },
-      {
-        "id": 5,
-        "items": [
-          {
-            "name": "kabab",
-            "price": 100.0,
-            "time": 5
-          }
-        ],
-        "branchId": null,
-        "totalPrice": 100.0,
-        "status": 2,
-        "time": 5,
-        "finishTime": "2024-06-01T22:21:15.9804527+03:30"
-      },
-      {
-        "id": 7,
-        "items": [
-          {
-            "name": "kabab",
-            "price": 100.0,
-            "time": 5
-          }
-        ],
-        "branchId": null,
-        "totalPrice": 100.0,
-        "status": 2,
-        "time": 5,
-        "finishTime": "2024-06-01T22:21:16.2485065+03:30"
-      },
-      {
-        "id": 9,
-        "items": [
-          {
-            "name": "kabab",
-            "price": 100.0,
-            "time": 5
-          }
-        ],
-        "branchId": null,
-        "totalPrice": 100.0,
-        "status": 2,
-        "time": 5,
-        "finishTime": "2024-06-01T22:21:16.4757735+03:30"
-      }
-    ]
+    "orders": []
   },
   {
     "id": 2,
     "branchName": "fazilat",
-    "capacity": 1,
+    "capacity": 2,
     "activeOrders": 0,
-    "orders": [
-      {
-        "id": 6,
-        "items": [
-          {
-            "name": "kabab",
-            "price": 100.0,
-            "time": 5
-          }
-        ],
-        "branchId": null,
-        "totalPrice": 100.0,
-        "status": 2,
-        "time": 5,
-        "finishTime": "2024-06-01T22:21:16.1364756+03:30"
-      },
-      {
-        "id": 8,
-        "items": [
-          {
-            "name": "kabab",
-            "price": 100.0,
-            "time": 5
-          }
-        ],
-        "branchId": null,
-        "totalPrice": 100.0,
-        "status": 2,
-        "time": 5,
-        "finishTime": "2024-06-01T22:21:16.3631281+03:30"
-      }
-    ]
+    "orders": []
   }
 ]

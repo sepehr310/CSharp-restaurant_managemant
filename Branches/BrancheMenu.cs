@@ -7,8 +7,9 @@ public class BranchMenu
     
      enum MenuDisplayEnum
     {
-        AddBranch,
-        UpdateBranch,
+        AddRestaurantBranch,
+        UpdateRestaurantBranch,
+        ListRestaurantBranchOrders,
         Back,
     }
      
@@ -21,9 +22,9 @@ public class BranchMenu
 
             Console.Clear();
             AnsiConsole.Clear();
-            var branch = new BranchesService();
+            var branchesService = new BranchesService();
 
-            List<BranchesSchema> list = branch.FindAll();
+            List<BranchesSchema> list = branchesService.FindAll();
             var dataTable = new Table().Centered();
 
             dataTable.Title = new TableTitle("List Branches");
@@ -34,19 +35,20 @@ public class BranchMenu
             foreach (var variable in list)
             {
                 dataTable.AddRow($"{variable.id}",$"{variable.branchName}",$"{variable.capacity}");
-                AnsiConsole.Write(dataTable);
             }
+            AnsiConsole.Write(dataTable);
+
             var Options = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                     .Title("Menu Options")
                     .PageSize(10)
                     .Mode(SelectionMode.Leaf)
                     .AddChoices(new[] {
-                        MenuDisplayEnum.AddBranch.ToString(),MenuDisplayEnum.UpdateBranch.ToString(),MenuDisplayEnum.Back.ToString()
+                        MenuDisplayEnum.AddRestaurantBranch.ToString(),MenuDisplayEnum.UpdateRestaurantBranch.ToString(),MenuDisplayEnum.ListRestaurantBranchOrders.ToString(),MenuDisplayEnum.Back.ToString()
                     }));
 
 
-            if (Options == MenuDisplayEnum.AddBranch.ToString())
+            if (Options == MenuDisplayEnum.AddRestaurantBranch.ToString())
             {
                 Console.WriteLine("Enter BranchName: ");
                 string branchName = Console.ReadLine();
@@ -54,15 +56,15 @@ public class BranchMenu
                 Console.WriteLine("Enter capacity: ");
                 int capacity = Convert.ToInt32(Console.ReadLine());
 
-                branch.create_Branch(new BranchesSchema()
+                branchesService.create_Branch(new BranchesSchema()
                 {
                     branchName = branchName,
                     capacity = capacity
                 });
-            }else if (Options == MenuDisplayEnum.UpdateBranch.ToString())
+            }else if (Options == MenuDisplayEnum.UpdateRestaurantBranch.ToString())
             {
                 Console.Write("Enter ID: ");
-                BranchesSchema find = branch.FindById(Convert.ToInt32(Console.ReadLine()));
+                BranchesSchema find = branchesService.FindById(Convert.ToInt32(Console.ReadLine()));
                 Console.Clear();
                 Console.WriteLine($"update Name? ({find.branchName})");
                 find.branchName = Console.ReadLine() ;
@@ -70,7 +72,31 @@ public class BranchMenu
                 Console.WriteLine($"update Capacity? ({find.capacity})");
                 find.capacity = Convert.ToInt32(Console.ReadLine());
                 
-                branch.UpdateById(find);
+                branchesService.UpdateById(find);
+
+            }else if (Options==MenuDisplayEnum.ListRestaurantBranchOrders.ToString())
+            {
+                Console.Write("Enter ID:");
+                int id = Convert.ToInt32(Console.ReadLine());
+                var branch = branchesService.FindAll().Where(item => item.id == id).First();
+                
+                Table ordersTable = new Table().Centered();
+
+                ordersTable.AddColumn("id");
+                ordersTable.AddColumn("Status");
+                ordersTable.AddColumn("Date End");
+                ordersTable.AddColumn("Price");
+
+                foreach (var i in branch.orders)
+                {
+                    ordersTable.AddRow($"{i.id}", $"{i.status}", $"{i.finishTime}", $"{i.totalPrice}");
+                }
+                AnsiConsole.Write(ordersTable);
+
+                
+                Console.WriteLine("press any key to back...");
+                Console.ReadKey(true);
+                Console.Clear();
 
             }
             else if (Options== MenuDisplayEnum.Back.ToString())

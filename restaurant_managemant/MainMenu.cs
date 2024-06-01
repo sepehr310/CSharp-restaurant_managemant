@@ -47,12 +47,12 @@ public class MainMenu
                     .PageSize(10)
                     .Mode(SelectionMode.Leaf)
                     .AddChoices(new[] {
-                        "Manage Branches", "manage Orders","Exit"
+                        "Manage Restaurant Branches", "manage Orders","Exit"
                     }));
         
             //TODO: add switch case
 
-            if (Options=="Manage Branches")
+            if (Options=="Manage Restaurant Branches")
             {
                 BranchMenu.MenuDisplay();
             }else if (Options == "manage Orders")

@@ -21,10 +21,10 @@ public class OrdersMenu
             AnsiConsole.Clear();
             var orderService = new OrderService();
 
-            List<OrderSchema> list = orderService.FindAllOrders();
+            List<OrderSchema> list = orderService.FindAllOrders().FindAll(item =>item.items !=null);
             var dataTable = new Table().Centered();
 
-            dataTable.Title = new TableTitle("List Branches");
+            dataTable.Title = new TableTitle("List Orders in Queue");
             dataTable.AddColumn("id");
             dataTable.AddColumn("Status");
             dataTable.AddColumn("Branch ID");
@@ -54,13 +54,18 @@ public class OrdersMenu
                     Console.WriteLine($"Add Order\nitem no {items.Count} ");
                     Console.WriteLine("Item name: ");
                     string itemnName = Console.ReadLine();
+                    
                     Console.WriteLine("Item price: ");
                     double itemnPrice = Convert.ToDouble(Console.ReadLine());
+                    
+                    Console.WriteLine("Item time(min): ");
+                    int itemnTime = Convert.ToInt32(Console.ReadLine());
 
                     OrderItemSchema newItem = new OrderItemSchema()
                     {
                         name = itemnName,
-                        price = itemnPrice
+                        price = itemnPrice,
+                        time = itemnTime
                     };
                     items.Add(newItem);
                    Console.WriteLine("press F1 to save Or any key to add more"); 
@@ -75,6 +80,7 @@ public class OrdersMenu
                            status = orderStausEnum.inQueue,
                            branchId = null,
                            totalPrice = items.Sum(item => item.price),
+                           time = items.Sum(item => item.time)
                        };
                        
                        orderService.CreateOrder(newOrder);

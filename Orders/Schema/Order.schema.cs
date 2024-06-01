@@ -7,4 +7,6 @@ public class OrderSchema
   public int ?branchId { get; set; }
   public double ?totalPrice { get; set; }
   public orderStausEnum status { get; set; }
+  public int time { get; set; }
+  public DateTime ?finishTime { get; set; }
 }

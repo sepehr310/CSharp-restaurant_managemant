@@ -1,30 +1,11 @@
 ﻿[
   {
-    "id": 2,
+    "id": 1,
     "items": null,
     "branchId": null,
     "totalPrice": null,
-    "status": 0
-  },
-  {
-    "id": 3,
-    "items": null,
-    "branchId": null,
-    "totalPrice": null,
-    "status": 0
-  },
-  {
-    "id": 4,
-    "items": null,
-    "branchId": null,
-    "totalPrice": null,
-    "status": 0
-  },
-  {
-    "id": 5,
-    "items": null,
-    "branchId": null,
-    "totalPrice": null,
-    "status": 0
+    "status": 0,
+    "time": 0,
+    "finishTime": null
   }
 ]

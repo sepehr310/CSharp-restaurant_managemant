@@ -41,10 +41,6 @@ public class OrderService
             
             DataManagementService.save_data(orders,"orders.json");
         }
-        else
-        {
-            Console.WriteLine("NotFound");
-        }
         
     }
 
@@ -58,10 +54,6 @@ public class OrderService
             
             orders.Remove(findOrders);
             DataManagementService.save_data(orders,"orders.json");
-        }
-        else
-        {
-            Console.WriteLine("NotFound");
         }
         
     }

@@ -4,13 +4,75 @@
     "branchName": "Razi1",
     "capacity": 2,
     "activeOrders": 0,
-    "orders": []
+    "orders": [
+      {
+        "id": 2,
+        "items": [
+          {
+            "name": "kabab",
+            "price": 120.0,
+            "time": 2
+          }
+        ],
+        "branchId": null,
+        "totalPrice": 120.0,
+        "status": 2,
+        "time": 2,
+        "finishTime": "2024-06-01T23:03:52.3545719+03:30"
+      },
+      {
+        "id": 4,
+        "items": [
+          {
+            "name": "kabab",
+            "price": 120.0,
+            "time": 2
+          }
+        ],
+        "branchId": null,
+        "totalPrice": 120.0,
+        "status": 2,
+        "time": 2,
+        "finishTime": "2024-06-01T23:03:52.6765792+03:30"
+      }
+    ]
   },
   {
     "id": 2,
     "branchName": "fazilat",
     "capacity": 2,
     "activeOrders": 0,
-    "orders": []
+    "orders": [
+      {
+        "id": 3,
+        "items": [
+          {
+            "name": "kabab",
+            "price": 120.0,
+            "time": 2
+          }
+        ],
+        "branchId": null,
+        "totalPrice": 120.0,
+        "status": 2,
+        "time": 2,
+        "finishTime": "2024-06-01T23:03:52.5641971+03:30"
+      },
+      {
+        "id": 5,
+        "items": [
+          {
+            "name": "kabab",
+            "price": 120.0,
+            "time": 2
+          }
+        ],
+        "branchId": null,
+        "totalPrice": 120.0,
+        "status": 2,
+        "time": 2,
+        "finishTime": "2024-06-01T23:03:52.7888936+03:30"
+      }
+    ]
   }
 ]

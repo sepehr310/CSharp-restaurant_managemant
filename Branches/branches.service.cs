@@ -42,10 +42,6 @@ public class BranchesService
             Thread.Sleep(10);
             DataManagementService.save_data(branches,"branches.json");
         }
-        else
-        {
-            Console.WriteLine("NotFound");
-        }
         
     }
 
@@ -70,10 +66,6 @@ public class BranchesService
             
             branches.Remove(findBranch);
             DataManagementService.save_data(branches,"orders.json");
-        }
-        else
-        {
-            Console.WriteLine("NotFound");
         }
         
     }

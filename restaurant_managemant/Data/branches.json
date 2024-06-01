@@ -1,26 +1,30 @@
 ﻿[
   {
     "id": 1,
-    "branchName": "Niyayesh",
+    "branchName": "shirodi",
     "capacity": 2,
-    "activeOrders": 1
+    "activeOrders": 0,
+    "orders": null
   },
   {
     "id": 2,
     "branchName": "Niyayesh",
     "capacity": 2,
-    "activeOrders": 0
+    "activeOrders": 0,
+    "orders": null
   },
   {
     "id": 3,
     "branchName": "Mirdamad",
     "capacity": 2,
-    "activeOrders": 0
+    "activeOrders": 0,
+    "orders"  : null
   },
   {
     "id": 4,
     "branchName": "Forsat shirazi",
     "capacity": 2,
-    "activeOrders": 0
+    "activeOrders": 0,
+    "orders": null
   }
 ]

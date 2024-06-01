@@ -1,6 +1,7 @@
 //using Newtonsoft.Json;
 
 using DataManagement;
+using Orders;
 
 namespace Branches;
 
@@ -41,6 +42,16 @@ public class BranchesService
         {
             Console.WriteLine("NotFound");
         }
+        
+    }
+
+    public void AddOrderToBranch(OrderSchema order, int branchId)
+    {
+        List<BranchesSchema> branches = DataManagementService.get_data<List<BranchesSchema>>("branches.json");
+        BranchesSchema findBranch = branches.Find(branch => branch.id == branchId);
+        findBranch.orders.Add(order);
+        DataManagementService.save_data(branches,"branches.json");
+        
         
     }
 

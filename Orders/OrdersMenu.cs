@@ -6,6 +6,7 @@ public class OrdersMenu
      enum MenuDisplayEnum
     {
         AddOrder,
+        DeleteOrder,
         Back,
     }
      
@@ -40,7 +41,7 @@ public class OrdersMenu
                     .PageSize(10)
                     .Mode(SelectionMode.Leaf)
                     .AddChoices(new[] {
-                        MenuDisplayEnum.AddOrder.ToString(),MenuDisplayEnum.Back.ToString()
+                        MenuDisplayEnum.AddOrder.ToString(),MenuDisplayEnum.DeleteOrder.ToString(),MenuDisplayEnum.Back.ToString()
                     }));
 
 
@@ -82,6 +83,14 @@ public class OrdersMenu
                    Console.Clear(); 
                 }
                 
+            }else if (Options == MenuDisplayEnum.DeleteOrder.ToString())
+            {
+                Console.WriteLine("Order id: ");
+                int orderId = Convert.ToInt32(Console.ReadLine());
+                orderService.DeleteOrder(orderId);
+                Console.WriteLine($"Order number {orderId} deleted ");
+                Thread.Sleep(300);
+                Console.Clear();
             }
             else if (Options== MenuDisplayEnum.Back.ToString())
             {

@@ -29,33 +29,23 @@ public class OrderSchedule
     private void TimerElapsedHandler(object sender, Timer.ElapsedEventArgs e)
     {
         TimerElapsed?.Invoke(this, EventArgs.Empty);
+        
+        OrderService orderService = new OrderService();
+        BranchesService branchesService = new BranchesService();
+        var orders = orderService.FindByStatus(orderStausEnum.inQueue).Where(item =>item.items != null).OrderBy(order =>order.id);
+        
+        foreach (var order in orders)
+        {
+            var branch = branchesService.FindAll().Where(branch =>branch.activeOrders<=branch.capacity) .OrderBy(branch => branch.activeOrders).First();
 
-        bool loop = true;
-
-        // while (loop)
-        // {
-        //     
-        //     OrderService orderService = new OrderService();
-        //     var order = orderService.FindByStatus(orderStausEnum.inQueue).OrderBy(order =>order.id).First();
-        //
-        //     if (order == null)
-        //     {
-        //         return;
-        //     }
-        //     
-        //     BranchesService branchesService = new BranchesService();
-        //     var branch = branchesService.FindAll().Where(branch =>branch.activeOrders<=branch.capacity) .OrderBy(branch => branch.activeOrders).First();
-        //
-        //     
-        //     if (branch == null)
-        //     {
-        //         return;
-        //     }
-        //
-        //     order.status = orderStausEnum.pending;
-        //     order.branchId = 1;
-        //   //  orderService.a
-        // }
+            if (order.status == orderStausEnum.inQueue)
+            {
+                order.status = orderStausEnum.pending;
+                
+                branchesService.AddOrderToBranch(order,branch.id);
+                orderService.DeleteOrder(order.id);
+            }
+        }
 
     }
 }

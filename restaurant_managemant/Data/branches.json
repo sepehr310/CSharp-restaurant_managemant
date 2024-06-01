@@ -3,35 +3,48 @@
     "id": 1,
     "branchName": "Razi1",
     "capacity": 2,
-    "activeOrders": 0,
-    "orders": null
+    "activeOrders": 1,
+    "orders": [
+      {
+        "id": 1,
+        "items": [
+          {
+            "name": "kabab",
+            "price": 20.0
+          }
+        ],
+        "branchId": null,
+        "totalPrice": 20.0,
+        "status": 1
+      }
+    ]
   },
   {
     "id": 2,
     "branchName": "qqqq",
     "capacity": 2,
     "activeOrders": 0,
-    "orders": null
+    "orders": []
   },
   {
     "id": 3,
     "branchName": "Mirdamad",
     "capacity": 2,
     "activeOrders": 0,
-    "orders": null
+    "orders": []
   },
   {
     "id": 4,
     "branchName": "Forsat shirazi",
     "capacity": 2,
     "activeOrders": 0,
-    "orders": null
+    "orders": []
   },
   {
     "id": 5,
     "branchName": "Modares",
     "capacity": 2,
     "activeOrders": 0,
-    "orders": null
+    "orders": []
   }
 ]

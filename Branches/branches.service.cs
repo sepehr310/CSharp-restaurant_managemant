@@ -15,6 +15,7 @@ public class BranchesService
 
      branch.activeOrders = 0;
      branches.Add(branch);
+     branch.orders = new List<OrderSchema>();
 
      DataManagementService.save_data(branches,"branches.json");
 
@@ -36,6 +37,7 @@ public class BranchesService
             findBranch.branchName = branch.branchName;
             findBranch.capacity = branch.capacity;
             findBranch.activeOrders = branch.activeOrders;
+            findBranch.orders = branch.orders;
             DeleteBranch(findBranch.id);
             Thread.Sleep(10);
             DataManagementService.save_data(branches,"branches.json");
@@ -53,8 +55,8 @@ public class BranchesService
         BranchesSchema findBranch = branches.Find(item => item.id == branchId);
         findBranch.orders.Add(order);
         findBranch.activeOrders += 1;
-        DataManagementService.save_data(branches,"branches.json");
         
+        UpdateById(findBranch);        
         
     }
     
